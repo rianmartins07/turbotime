@@ -205,7 +205,7 @@ The project includes comprehensive test coverage for the backend API:
 ## Demo Video
 
 A 5-minute walkthrough video demonstrating the app's functionality is available. The video covers:
-https://www.loom.com/share/393cf8335b21426dbb585961c974330b
+https://www.loom.com/share/9168dd1c0331479fa95492ebe568bdb7 (New Video!)
 
 - User registration and authentication
 - Creating, reading, updating, and deleting notes
