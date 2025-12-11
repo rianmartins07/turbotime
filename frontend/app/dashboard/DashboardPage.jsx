@@ -28,7 +28,6 @@ export default function DashboardPage() {
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [notes, setNotes] = useState([])
   const [categories, setCategories] = useState([])
-  const [totalNotesCount, setTotalNotesCount] = useState(0)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState('')
   const router = useRouter()
@@ -41,6 +40,7 @@ export default function DashboardPage() {
       const token = getToken()
       if (!token) {
         router.push('/registration')
+        setIsLoading(false)
         return
       }
 
@@ -72,9 +72,6 @@ export default function DashboardPage() {
           updated_at: note.updated_at,
         }
       })
-      
-      const totalCount = categoriesData.reduce((sum, cat) => sum + cat.count, 0)
-      setTotalNotesCount(totalCount)
 
       setNotes(formattedNotes)
     } catch (err) {
@@ -88,15 +85,8 @@ export default function DashboardPage() {
   }
 
   useEffect(() => {
-    loadDashboardData()
-  }, [])
-
-  useEffect(() => {
-    if (selectedCategory === 'all') {
-      loadDashboardData(null)
-    } else {
-      loadDashboardData(selectedCategory)
-    }
+    const categoryFilter = selectedCategory === 'all' ? null : selectedCategory
+    loadDashboardData(categoryFilter)
   }, [selectedCategory])
 
   const handleNewNote = () => {
@@ -114,8 +104,6 @@ export default function DashboardPage() {
       setSelectedCategory(categoryName)
     }
   }
-
-  const filteredNotes = notes
 
   return (
     <main className="w-full bg-[#faf1e3] min-h-screen">
@@ -207,7 +195,7 @@ export default function DashboardPage() {
                 
                 {!isLoading && !error && (
                   <div className="w-full">
-                    {filteredNotes.length === 0 ? (
+                    {notes.length === 0 ? (
                       <div className="w-full flex flex-col items-center justify-center py-8 lg:py-16">
                         <Image 
                           src="/images/coffe.png" 
@@ -222,7 +210,7 @@ export default function DashboardPage() {
                       </div>
                     ) : (
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-[16px]">
-                        {filteredNotes.map((note) => (
+                        {notes.map((note) => (
                           <NoteCard
                             key={note.id}
                             note={note}
