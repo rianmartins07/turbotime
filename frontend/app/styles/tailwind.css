@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --primary-teal: #78aba8;
+    --primary-teal-opacity: #78aba87f;
+    --primary-orange: #ef9c66;
+    --primary-orange-opacity: #ef9c667f;
+    
+    /* Background Colors */
+    --bg-cream: #faf1e3;
+    --bg-yellow: #fcdc94;
+    --bg-yellow-opacity: #fcdc947f;
+    --bg-card: #ffffff;
+    
+    /* Text Colors */
+    --text-primary: #000000;
+    --text-brown: #88632a;
+    --text-brown-dark: #947038;
+    
+    /* Border Colors */
+    --border-teal: #78aba8;
+    --border-brown: #947038;
+    --border-orange: #ef9c66;
+    --border-yellow: #fcdc94;
+    
+    /* Typography Variables */
+    --font-size-xs: 12px;
+    --font-size-base: 16px;
+    --font-size-lg: 24px;
+    --font-size-xl: 48px;
+    
+    /* Font Weight Variables */
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    
+    /* Line Height Variables */
+    --line-height-xs: 14px;
+    --line-height-sm: 15px;
+    --line-height-base: 20px;
+    --line-height-lg: 28px;
+    --line-height-xl: 29px;
+    --line-height-2xl: 58px;
+    
+    /* Spacing Variables */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+    --spacing-2xl: 36px;
+    --spacing-3xl: 42px;
+    
+    /* Padding Variables */
+    --padding-xs: 10px;
+    --padding-sm: 12px;
+    --padding-md: 14px;
+    --padding-lg: 16px;
+    --padding-xl: 30px;
+    --padding-2xl: 34px;
+    --padding-3xl: 38px;
+    
+    /* Gap Variables */
+    --gap-xs: 6px;
+    --gap-sm: 10px;
+    --gap-md: 12px;
+    --gap-lg: 16px;
+    --gap-xl: 18px;
+    
+    /* Border Radius Variables */
+    --radius-xs: 4px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 20px;
+    
+    /* Border Width Variables */
+    --border-width-sm: 1px;
+    --border-width-md: 3px;
+  }
+}
